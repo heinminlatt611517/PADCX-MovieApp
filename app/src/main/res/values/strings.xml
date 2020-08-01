@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">PADCX-MovieApp-Assignment</string>
+
+    <string name="em_no_news">Movies are not available for now</string>
+    <string name="txt_btnPlayTrailer">Play Trailer</string>
+    <string name="txt_btnRateMovie">Rate Movie</string>
+    <string name="str_Family">Family</string>
+    <string name="str_fantasy">Fantasy</string>
+    <string name="str_adventure">Adventure</string>
+    <string name="str_txtActor">Actors</string>
+    <string name="str_txtStoryline">Storyline</string>
+    <string name="str_txtFilm">About film</string>
+    <string name="str_txtcreator">creators</string>
+    <string name="txt_bestPopularMovie">Best Popular Movies and Serials</string>
+    <string name="txt_checkMovieShowTime">Check Movie\nShowTimes</string>
+    <string name="txtSeeMore">See More</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="srt_txt_showCases">ShowCases</string>
+    <string name="str_txtMoreShowCases">More ShowCases</string>
+</resources>

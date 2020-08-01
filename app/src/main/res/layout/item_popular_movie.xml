@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="150dp"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="@dimen/margin_medium"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/LinearLayout"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/ivMovie"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/moviehd"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    </FrameLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvMovieTitle"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="West World"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@+id/LinearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        android:singleLine="false"
+        android:maxLines="2"
+        />
+
+    <TextView
+        android:id="@+id/tvRateCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="8.20"
+        android:layout_marginTop="@dimen/margin_small"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@+id/tvMovieTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <RatingBar
+        android:id="@+id/rating"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:rating="5"
+        android:stepSize="1"
+        android:theme="@style/RatingBar"
+        android:layout_marginLeft="@dimen/margin_medium"
+        app:layout_constraintStart_toEndOf="@+id/tvRateCount"
+        app:layout_constraintTop_toTopOf="@+id/tvRateCount"
+        app:layout_constraintBottom_toBottomOf="@+id/tvRateCount"
+        app:layout_constraintTop_toBottomOf="@+id/tvMovieTitle"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

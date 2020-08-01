@@ -1,0 +1,55 @@
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_below="@+id/tvActor"
+    android:layout_width="360dp"
+    android:layout_height="230dp"
+    android:layout_marginRight="@dimen/margin_medium"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/ivActor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/moviehd"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_bg"></FrameLayout>
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/ivPlayMovie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_play_movie_foreground"/>
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/darker_gray"
+        android:text="15 December 2016"
+        android:layout_marginBottom="@dimen/margin_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="@dimen/margin_medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="10sp"/>
+
+    <TextView
+        android:id="@+id/tvMovieName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:text="Passenger"
+        app:layout_constraintStart_toStartOf="@+id/tvDate"
+        app:layout_constraintBottom_toTopOf="@+id/tvDate"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,34 @@
+<com.example.padcx_movieapp_assignment.views.viewPods.ReactionViewPod
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:id="@+id/tvActor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_txtActor"
+        android:layout_alignParentStart="true"
+        android:textAllCaps="true"
+        android:textColor="@android:color/darker_gray"
+        android:layout_alignParentLeft="true" />
+    <TextView
+        android:id="@+id/tvMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="More Creators"
+        android:textAllCaps="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textColor="@android:color/darker_gray" />
+    <TextView
+        android:id="@+id/tvDivider"
+        android:layout_width="100dp"
+        android:layout_height="1dp"
+        android:layout_below="@+id/tvMore"
+        android:background="@android:color/white"
+        android:layout_alignStart="@+id/tvMore"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/tvMore" />
+</com.example.padcx_movieapp_assignment.views.viewPods.ReactionViewPod>
