@@ -68,7 +68,7 @@ class MainActivity : BaseActivity(),MainView{
 
     private fun setUpTopMovieSliderRecycler() {
         mImageSlider =findViewById(R.id.topMovieSlider)
-        mTopMovieSliderAdapter = TopMovieImageSliderAdapter(arrayListOf(),this!!.applicationContext!!)
+        mTopMovieSliderAdapter = TopMovieImageSliderAdapter(mPresenter,arrayListOf(),this!!.applicationContext!!)
         mImageSlider.sliderAdapter=mTopMovieSliderAdapter
 
         setUpImageSlider()

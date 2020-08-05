@@ -2,9 +2,12 @@ package com.example.padcx_movieapp_assignment.activities
 
 import android.content.Context
 import android.content.Intent
+import android.content.res.ColorStateList
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
@@ -17,11 +20,14 @@ import com.example.padcx_movieapp_assignment.mvp.presenters.MovieDetailPresenter
 import com.example.padcx_movieapp_assignment.mvp.presenters.impls.MovieDetailPresenterImpl
 import com.example.padcx_movieapp_assignment.mvp.views.MovieDetailView
 import com.example.padcx_movieapp_assignment.utils.IMAGE_BASE_URL
+import com.example.padcx_movieapp_assignment.utils.hourMin
 import com.example.padcx_movieapp_assignment.views.viewPods.ReactionViewPod
+import com.google.android.material.chip.Chip
 import kotlinx.android.synthetic.main.about_flim_layout.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_movie_detail.*
 import kotlin.math.log
+import kotlin.time.hours
 
 class MovieDetailActivity : BaseActivity(),MovieDetailView {
 
@@ -116,17 +122,26 @@ class MovieDetailActivity : BaseActivity(),MovieDetailView {
     }
 
     private fun bindData(movie: MovieVO) {
+
+
+
         tvMovieTitle.text=movie.title
         tv_storylineText.text=movie.overview
         btn_movieYear.text=movie.releaseDate
+        tvDateTime.text=movie.runtime.hourMin()
         Glide.with(this).
             load(movie.homepage)
             .into(ivDetail)
+
 
         rating.rating=movie.vote_average
         tvVoteCount.text=movie.vote_count.toString()
         Glide.with(this).load(IMAGE_BASE_URL+movie.posterPath)
             .into(ivDetail)
+
+        //bind genre chip
+        bindGenreChips(movie)
+
 
         //about Film
         tvOriginalTitleName.text=movie.originalTitle
@@ -138,6 +153,22 @@ class MovieDetailActivity : BaseActivity(),MovieDetailView {
 
 
     }
+
+    private fun bindGenreChips(movie: MovieVO) {
+       val genres = movie.genres.map { it.name }
+        chip_group.removeAllViews()
+        for (index in genres.indices)
+        {
+            val chip = Chip(chip_group.context)
+            chip.text= genres[index]
+            chip.maxWidth = 8
+            chip.minEms = 4
+            chip.setTextColor(Color.WHITE)
+            chip.chipBackgroundColor = ColorStateList.valueOf(ContextCompat.getColor(chip_group.context, R.color.colorPrimary))
+            chip_group.addView(chip)
+        }
+    }
+
 
     override fun showErrorMessage(errorMessage: String) {
         Log.d("MovieDetailError", errorMessage)

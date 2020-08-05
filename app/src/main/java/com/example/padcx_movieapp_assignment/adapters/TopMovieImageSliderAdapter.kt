@@ -10,15 +10,15 @@ import com.bumptech.glide.Glide
 import com.example.padcx_movieapp_assignment.R
 import com.example.padcx_movieapp_assignment.data.vos.NowPlayingMovieVO
 import com.example.padcx_movieapp_assignment.data.vos.UpcomingMovieVO
+import com.example.padcx_movieapp_assignment.delegates.MovieItemDelegate
 import com.example.padcx_movieapp_assignment.utils.IMAGE_BASE_URL
 import com.smarteist.autoimageslider.SliderViewAdapter
 
-class TopMovieImageSliderAdapter(val list: ArrayList<NowPlayingMovieVO>, val context: Context) :
+class TopMovieImageSliderAdapter(delegate: MovieItemDelegate,val list: ArrayList<NowPlayingMovieVO>, val context: Context) :
     SliderViewAdapter<TopMovieImageSliderAdapter.viewHolder>() {
-
+    val mDelegate = delegate
     val listSize = 5
-    var onItemClick: ((UpcomingMovieVO) -> Unit)? = null
-    class viewHolder(view: View) : SliderViewAdapter.ViewHolder(view) {
+    open class viewHolder(view: View) : SliderViewAdapter.ViewHolder(view) {
 
         var ivTopImageSlider: ImageView
         var tvMovieName : TextView
@@ -52,6 +52,10 @@ class TopMovieImageSliderAdapter(val list: ArrayList<NowPlayingMovieVO>, val con
             Glide.with(this.context).load(IMAGE_BASE_URL+list[position].backdropPath).into(
                 it
             )
+        }
+
+        viewHolder?.ivTopImageSlider?.setOnClickListener {
+            mDelegate.onTapTopMovieSliderImage(list[position].id)
         }
 
 

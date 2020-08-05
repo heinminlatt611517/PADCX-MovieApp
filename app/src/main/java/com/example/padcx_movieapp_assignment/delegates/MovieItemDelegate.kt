@@ -5,4 +5,5 @@ interface MovieItemDelegate {
     fun onTapPopularMovieItem(movieId: Int)
     fun onTapShowCaseItem(movieId: Int)
     fun onTapBestActorItem(movieId: Int)
+    fun onTapTopMovieSliderImage(movieId: Int)
 }

@@ -50,6 +50,10 @@ class MainPresenterImpl : MainPresenter,
         mView?.navigateToMovieDetailScreen(movieId)
     }
 
+    override fun onTapTopMovieSliderImage(movieId: Int) {
+        mView?.navigateToMovieDetailScreen(movieId)
+    }
+
     fun getAllNowPlayingMovies(lifecycleOwner: LifecycleOwner){
         mMovieModel.getAllNowPlayingMovie()
             .observe(lifecycleOwner, Observer {
