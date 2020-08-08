@@ -23,7 +23,7 @@ data class NowPlayingMovieVO (
     @SerializedName("adult")
     var adult : Boolean = false,
     @SerializedName("backdrop_path")
-    var backdropPath : String = "",
+    var backdropPath : String? = "",
     @SerializedName("original_language")
     var originalLanguage : String="",
     @SerializedName("original_title")
