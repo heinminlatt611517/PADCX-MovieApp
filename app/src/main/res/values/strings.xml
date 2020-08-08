@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">PADCX-MovieApp-Assignment</string>
+    <string name="app_name_dev">PADCX-MovieApp-Assignment(dev)</string>
+    <string name="app_name_prod">PADCX-MovieApp-Assignment(prod)</string>
+    <string name="app_name_staging">PADCX-MovieApp-Assignment(staging)</string>
 
     <string name="em_no_news">Movies are not available for now</string>
     <string name="txt_btnPlayTrailer">Play Trailer</string>
