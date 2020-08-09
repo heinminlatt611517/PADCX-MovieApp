@@ -5,11 +5,11 @@ import android.view.ViewGroup
 import com.example.padcx_movieapp_assignment.R
 import com.example.padcx_movieapp_assignment.data.vos.TopRateVO
 import com.example.padcx_movieapp_assignment.delegates.MovieItemDelegate
-import com.example.padcx_movieapp_assignment.views.viewHolders.BaseViewHolder
+import com.example.shared.viewholder.BaseViewHolder
 import com.example.padcx_movieapp_assignment.views.viewHolders.BestActorViewHolder
-import com.example.padcx_movieapp_assignment.views.viewHolders.ShowCaseViewHolder
+import com.example.shared.adapter.BaseRecyclerAdapter
 
-class BestActorAdapter(delegate : MovieItemDelegate) : BaseRecyclerAdapter<BaseViewHolder<TopRateVO>,TopRateVO>() {
+class BestActorAdapter(delegate : MovieItemDelegate) : BaseRecyclerAdapter<BaseViewHolder<TopRateVO>, TopRateVO>() {
 
     val mDelegate = delegate
 

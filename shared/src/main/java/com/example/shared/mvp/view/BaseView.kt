@@ -1,4 +1,4 @@
-package com.example.padcx_movieapp_assignment.mvp.views
+package com.example.shared.mvp.view
 
 interface BaseView {
     fun showErrorMessage(errorMessage : String)

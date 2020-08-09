@@ -1,12 +1,11 @@
 package com.example.padcx_movieapp_assignment.views.viewHolders
 
-import android.graphics.Movie
 import android.view.View
-import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.padcx_movieapp_assignment.data.vos.UpcomingMovieVO
 import com.example.padcx_movieapp_assignment.delegates.MovieItemDelegate
 import com.example.padcx_movieapp_assignment.utils.IMAGE_BASE_URL
+import com.example.shared.viewholder.BaseViewHolder
 import kotlinx.android.synthetic.main.item_showcase.view.*
 
 class ShowCaseViewHolder(private val mDelegate : MovieItemDelegate,itemView: View) : BaseViewHolder<UpcomingMovieVO>(itemView) {

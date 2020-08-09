@@ -1,4 +1,4 @@
-package com.example.padcx_movieapp_assignment.views.viewHolders
+package com.example.shared.viewholder
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

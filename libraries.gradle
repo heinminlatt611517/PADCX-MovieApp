@@ -1,7 +1,27 @@
 ext{
-    glideVersion="4.11.0"
+    glideVersion="4.8.0"
+    workVersion="2.3.1"
+    recyclerVersion="1.1.0"
+    rxKotlinVersion="2.4.0"
+    rxAndroidVersion="2.1.1"
+    GSONVersion = "2.8.6"
+    okhttpVersion = "4.1.0"
+    swipeRefreshVersion = "1.0.0"
+    retorfitVersion = "2.6.1"
+    retrofitConverterVersion="2.5.0"
+    retrofitAdapterVersion = "2.6.1"
 
     libraries = [
-            glide : "com.github.bumptech.glide:glide:$glideVersion"
+            glide : "com.github.bumptech.glide:glide:$glideVersion",
+            work : "androidx.work:work-runtime:$workVersion",
+            recycler : "androidx.recyclerview:recyclerview:$recyclerVersion",
+            rxKotlin : "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion",
+            rxAndroid : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
+            GSON : "com.google.code.gson:gson:$GSONVersion",
+            Okhttp : "com.squareup.okhttp3:okhttp:$okhttpVersion",
+            swipeRefresh : "androidx.swiperefreshlayout:swiperefreshlayout:$swipeRefreshVersion",
+            retrofit : "com.squareup.retrofit2:retrofit:$retorfitVersion",
+            retorfitConverter : "com.squareup.retrofit2:converter-gson:$retrofitConverterVersion",
+            retrofitAdapter : "com.squareup.retrofit2:adapter-rxjava2:$retrofitAdapterVersion"
     ]
 }

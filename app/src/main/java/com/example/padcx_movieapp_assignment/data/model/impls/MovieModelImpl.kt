@@ -2,6 +2,7 @@ package com.example.padcx_movieapp_assignment.data.model.impls
 
 import android.util.Log
 import androidx.lifecycle.LiveData
+import com.example.padcx_movieapp_assignment.BuildConfig
 import com.example.padcx_movieapp_assignment.data.model.BaseModel
 import com.example.padcx_movieapp_assignment.data.model.MovieModel
 import com.example.padcx_movieapp_assignment.data.vos.*
@@ -14,7 +15,7 @@ import io.reactivex.schedulers.Schedulers
 object MovieModelImpl : MovieModel,
     BaseModel() {
     override fun firstTimeNowPlayingMovieSaveToDatabase(onSuccess: () -> Unit, onError: (String) -> Unit) {
-        mMoviesApi.getNowPlayingMovie(API_KEY)
+        mMoviesApi.getNowPlayingMovie(BuildConfig.API_KEY)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .map { it.retult }
@@ -27,7 +28,7 @@ object MovieModelImpl : MovieModel,
         onSuccess: () -> Unit,
         onError: (String) -> Unit
     ) {
-        mMoviesApi.getUpComingMovie(API_KEY)
+        mMoviesApi.getUpComingMovie(BuildConfig.API_KEY)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .map { it.retult }
@@ -42,7 +43,7 @@ object MovieModelImpl : MovieModel,
         onSuccess: () -> Unit,
         onError: (String) -> Unit
     ) {
-        mMoviesApi.getPopularMovie(API_KEY)
+        mMoviesApi.getPopularMovie(BuildConfig.API_KEY)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .map { it.results }
@@ -55,7 +56,7 @@ object MovieModelImpl : MovieModel,
         onSuccess: () -> Unit,
         onError: (String) -> Unit
     ) {
-        mMoviesApi.getTopMovie(API_KEY)
+        mMoviesApi.getTopMovie(BuildConfig.API_KEY)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .map { it.results }
@@ -72,7 +73,7 @@ object MovieModelImpl : MovieModel,
 
 
     override fun getMovieById(movieId: Int): Observable<MovieVO> {
-        return mMoviesApi.getMovieDetailById(movieId, API_KEY)
+        return mMoviesApi.getMovieDetailById(movieId, BuildConfig.API_KEY)
     }
 
     override fun getPopularMovie(): LiveData<List<PopularMovieVO>> {
@@ -91,28 +92,28 @@ object MovieModelImpl : MovieModel,
     }
 
     override fun getSimilarMovie(movieId: Int): Observable<List<SimilarMovieVO>> {
-        return mMoviesApi.getSimilarMovie(movieId, API_KEY)
+        return mMoviesApi.getSimilarMovie(movieId, BuildConfig.API_KEY)
             .map { it.results }
 
     }
 
     override fun getCastMovie(movieId: Int): Observable<List<CastVO>> {
-      return  mMoviesApi.getCastAndCrewMovie(movieId, API_KEY)
+      return  mMoviesApi.getCastAndCrewMovie(movieId, BuildConfig.API_KEY)
             .map { it.cast }
     }
 
     override fun getCrewMovie(movieId: Int): Observable<List<CrewVO>> {
-        return  mMoviesApi.getCastAndCrewMovie(movieId, API_KEY)
+        return  mMoviesApi.getCastAndCrewMovie(movieId, BuildConfig.API_KEY)
             .map { it.crew }
     }
 
     override fun getGenreMovie(): Observable<List<GenresVO>> {
-        return mMoviesApi?.getGenreMovie(API_KEY)
+        return mMoviesApi?.getGenreMovie(BuildConfig.API_KEY)
             .map { it.genres }
     }
 
     override fun getMovieListById(movieId: Int): Observable<List<MovieListVO>> {
-        return mMoviesApi.getMovieListById(movieId, API_KEY)
+        return mMoviesApi.getMovieListById(movieId, BuildConfig.API_KEY)
             .map { it.results }
     }
 

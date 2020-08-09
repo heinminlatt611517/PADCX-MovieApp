@@ -1,6 +1,7 @@
 package com.example.padcx_movieapp_assignment.data.model
 
 import android.content.Context
+import com.example.padcx_movieapp_assignment.BuildConfig
 import com.example.padcx_movieapp_assignment.network.MoviesApi
 import com.example.padcx_movieapp_assignment.presistence.db.MovieDb
 import com.example.padcx_movieapp_assignment.utils.base_url
@@ -28,7 +29,7 @@ abstract class BaseModel {
           .build()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl(base_url)
+            .baseUrl(BuildConfig.BASE_URL_FIELD)
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())

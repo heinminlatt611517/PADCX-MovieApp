@@ -30,6 +30,27 @@ task clean(type: Delete) {
 apply from : 'libraries.gradle'
 
 
+
+
+
+//load api_key properties
+def Api_Key = loadApiKey()
+
+ext{
+    API_KEY=Api_Key.getProperty("API_KEy")
+}
+
+def loadApiKey(){
+    Properties api_key = new Properties()
+    api_key.load(project.rootProject.file("api_key.properties").newDataInputStream())
+
+    return api_key
+}
+
+
+
+
+
 // load gradle properties
 def verySensitiveDP = loadSensitiveData()
 

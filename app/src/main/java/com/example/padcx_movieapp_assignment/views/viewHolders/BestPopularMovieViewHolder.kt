@@ -5,6 +5,7 @@ import com.bumptech.glide.Glide
 import com.example.padcx_movieapp_assignment.data.vos.PopularMovieVO
 import com.example.padcx_movieapp_assignment.delegates.MovieItemDelegate
 import com.example.padcx_movieapp_assignment.utils.IMAGE_BASE_URL
+import com.example.shared.viewholder.BaseViewHolder
 import kotlinx.android.synthetic.main.item_popular_movie.view.*
 
 class BestPopularMovieViewHolder(private val mDelegate : MovieItemDelegate,itemView: View) : BaseViewHolder<PopularMovieVO>(itemView) {
