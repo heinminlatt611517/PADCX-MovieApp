@@ -38,11 +38,14 @@ object MockMovieImpls : MovieModel {
     }
 
     override fun getAllNowPlayingMovie(): LiveData<List<NowPlayingMovieVO>> {
-        val liveData = MutableLiveData<List<NowPlayingMovieVO>> ()
-        liveData.postValue(listOf(NowPlayingMovieVO(),
-            NowPlayingMovieVO(), NowPlayingMovieVO
-        ()
-        ))
+        val liveData = MutableLiveData<List<NowPlayingMovieVO>>()
+        liveData.postValue(
+            listOf(
+                NowPlayingMovieVO(),
+                NowPlayingMovieVO(), NowPlayingMovieVO
+                    ()
+            )
+        )
         return liveData
     }
 
@@ -51,21 +54,25 @@ object MockMovieImpls : MovieModel {
     }
 
     override fun getPopularMovie(): LiveData<List<PopularMovieVO>> {
-        val liveData = MutableLiveData<List<PopularMovieVO>> ()
-        liveData.postValue(listOf(PopularMovieVO(),
-            PopularMovieVO(),PopularMovieVO
-                ()))
+        val liveData = MutableLiveData<List<PopularMovieVO>>()
+        liveData.postValue(
+            listOf(
+                PopularMovieVO(),
+                PopularMovieVO(), PopularMovieVO
+                    ()
+            )
+        )
         return liveData
     }
 
     override fun getUpComingMovie(): LiveData<List<UpcomingMovieVO>> {
-        val liveData = MutableLiveData<List<UpcomingMovieVO>> ()
+        val liveData = MutableLiveData<List<UpcomingMovieVO>>()
         liveData.postValue(listOf(UpcomingMovieVO(), UpcomingMovieVO(), UpcomingMovieVO()))
         return liveData
     }
 
     override fun getTopRateMovie(): LiveData<List<TopRateVO>> {
-        val liveData = MutableLiveData<List<TopRateVO>> ()
+        val liveData = MutableLiveData<List<TopRateVO>>()
         liveData.postValue(listOf(TopRateVO(), TopRateVO(), TopRateVO()))
         return liveData
     }

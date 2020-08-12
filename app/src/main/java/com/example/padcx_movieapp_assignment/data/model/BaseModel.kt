@@ -14,19 +14,19 @@ import java.util.concurrent.TimeUnit
 
 abstract class BaseModel {
 
-    protected  var mMoviesApi : MoviesApi
+    protected var mMoviesApi: MoviesApi
     protected lateinit var mMovieDb: MovieDb
 
     init {
-      val okHttpClient = OkHttpClient.Builder()
-          .addInterceptor(HttpLoggingInterceptor()
-              .apply {
-                  level = HttpLoggingInterceptor.Level.BODY
-              })
-          .connectTimeout(100,TimeUnit.SECONDS)
-          .readTimeout(100,TimeUnit.SECONDS)
-          .writeTimeout(100,TimeUnit.SECONDS)
-          .build()
+        val okHttpClient = OkHttpClient.Builder()
+            .addInterceptor(HttpLoggingInterceptor()
+                .apply {
+                    level = HttpLoggingInterceptor.Level.BODY
+                })
+            .connectTimeout(100, TimeUnit.SECONDS)
+            .readTimeout(100, TimeUnit.SECONDS)
+            .writeTimeout(100, TimeUnit.SECONDS)
+            .build()
 
         val retrofit = Retrofit.Builder()
             .baseUrl(BuildConfig.BASE_URL_FIELD)
@@ -36,14 +36,15 @@ abstract class BaseModel {
             .build()
 
 
-        mMoviesApi=retrofit.create(MoviesApi::class.java)
+        mMoviesApi = retrofit.create(MoviesApi::class.java)
     }
 
     fun getOKhttpClientinterceptor(): HttpLoggingInterceptor = HttpLoggingInterceptor()
         .apply {
             level = HttpLoggingInterceptor.Level.BODY
         }
-    fun initDatabase(context: Context){
-        mMovieDb= MovieDb.DbInstance(context)
+
+    fun initDatabase(context: Context) {
+        mMovieDb = MovieDb.DbInstance(context)
     }
 }

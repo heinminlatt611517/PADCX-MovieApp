@@ -10,7 +10,7 @@ import com.example.padcx_movieapp_assignment.presistence.daos.MoviesDao
 import com.example.padcx_movieapp_assignment.presistence.typeConverters.GenreTypeConverter
 
 
-@Database(entities = [PopularMovieVO::class,UpcomingMovieVO::class,NowPlayingMovieVO::class,TopRateVO::class],version = 3,exportSchema = false )
+@Database(entities = [PopularMovieVO::class,UpcomingMovieVO::class,NowPlayingMovieVO::class,TopRateVO::class],version = 4,exportSchema = false )
 abstract class MovieDb : RoomDatabase() {
     companion object{
         val DB_NAME ="MOVIE.DB"

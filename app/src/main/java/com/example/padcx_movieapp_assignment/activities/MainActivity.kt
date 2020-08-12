@@ -3,8 +3,11 @@ package com.example.padcx_movieapp_assignment.activities
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.padcx_movieapp_assignment.R
@@ -72,6 +75,8 @@ class MainActivity : BaseActivity(),MainView{
         mImageSlider.sliderAdapter=mTopMovieSliderAdapter
 
         setUpImageSlider()
+
+
 
     }
 
@@ -183,4 +188,13 @@ class MainActivity : BaseActivity(),MainView{
     override fun showErrorMessage(errorMessage: String) {
         Log.d("Error",errorMessage)
     }
+    fun showEmptyView(){
+    mViewPodEmpty.visibility= View.VISIBLE
+    }
+
+    fun hideEmptyView(){
+    mViewPodEmpty.visibility=View.GONE
+    }
+
+
 }
